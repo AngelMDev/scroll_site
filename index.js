@@ -6,6 +6,7 @@ $(document).ready(function(){
   var sectionHeight=parseFloat($("#basic").css("height"))
   var checkpoint1=$("#better").offset().top;
   var buffer=sectionHeight*0.35;
+  var vh=sectionHeight-(buffer);
   console.log("CP1",checkpoint1);
   var checkpoint2=$("#best").offset().top;
   console.log("CP2",checkpoint2);
@@ -60,6 +61,7 @@ $(document).ready(function(){
       switchElements($(".content-title-better"),$(".content-title-best"),check2percentage);
       switchElements($(".main-paragraph-better"),$(".main-paragraph-best"),check2percentage);
       switchElements($(".scroll-text-better"),$(".scroll-text-best"),check2percentage);
+      //changeAttribute($("#navbar-fol"),parseFloat($("#navbar-fol").css('height')),vh,check2percentage,"height","px");
       //changeColor($("#navbar-fol"),[0,0,0],'background-color',check1percentage);
     }
     if(scroll>checkpoint2){
@@ -102,7 +104,7 @@ function changeAlpha(element, alpha, property) {
 //IT DOESN'T WORK FOR COLORS!
 //Usage: 
 //element: Jquery Element - it is the element we want to change.
-//startValue: (optional default = 0) float - it is the value that we want the element to take at 0.
+//startValue: float - it is the value that we want the element to take at 0. If null it takes the value from the object
 //endValue: float - it is the value that we want the element to take at 1.
 //percentage: float - it is the current scroll percentage (from 0 to 1)
 //property: string - it is the property or attribute that we want to change (width, height)...
