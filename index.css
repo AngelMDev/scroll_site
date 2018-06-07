@@ -1,51 +1,77 @@
 /******************************************************************************************************/
+
 /*                                                                                                    */
+
 /* !!!! WHEN ASSIGNING COLORS USE RGBA VALUES ONLY IF YOU WANT TO GRADUALLY CHANGE THEM USING JS !!!! */
+
 /*                                                                                                    */
+
 /******************************************************************************************************/
 
-.section-fol{
-height: 135vh;
+/* FLEXBOX */
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.body-basic{
-
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.body-better{
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+///////////////////////
+body {
+  margin:0px;
+}
+
+.section-fol {
+  height: 135vh;
+}
+
+.body-basic {}
+
+.body-better {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#basic{
+#basic {}
 
-}
-
-#better{
+#better {
   background: #efefef;
   font-family: inherit;
 }
 
-.title-container{
+.title-container {
   top: 15px;
   text-align: center;
   position: fixed;
 }
 
-.main-title-basic,.main-title-better,.main-title-best{
+.main-title-basic, .main-title-better, .main-title-best {
   font-size: 3rem;
 }
 
-.main-title-better,.main-title-best{
+.main-title-better, .main-title-best {
   opacity: 0;
 }
 
-.main-title-better{
+.main-title-better {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar{
-  top:150px;
+.navbar {
+  top: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -56,50 +82,48 @@ height: 135vh;
   position: fixed;
   width: 60%;
   background-color: rgba(202, 235, 242, 0);
-  
 }
 
-.navbar-better{
-  border-style:none;
-  background-color: rgba(202, 235, 242, 1);  
+.navbar-better {
+  border-style: none;
+  background-color: rgba(202, 235, 242, 1);
 }
 
-.center{
+.center {
   margin: auto;
   left: 0;
   right: 0;
 }
 
-
-.content{
+.content {
   top: 250px;
   margin: 0 auto;
   width: 70%;
   position: fixed;
 }
 
-.main-paragraph-basic,.main-paragraph-better,.main-paragraph-best{
+.main-paragraph-basic, .main-paragraph-better, .main-paragraph-best {
   font-size: 1.2rem;
 }
 
-.main-paragraph-best,.main-paragraph-better{
+.main-paragraph-best, .main-paragraph-better {
   opacity: 0;
 }
 
-.content-title-basic,.content-title-better,.content-title-best{
+.content-title-basic, .content-title-better, .content-title-best {
   text-align: center;
   font-size: 2.5rem;
 }
 
-.content-title-better,.content-title-best{
+.content-title-better, .content-title-best {
   opacity: 0;
 }
 
-.content-title-better{
+.content-title-better {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.scroll-down-container{
+.scroll-down-container {
   padding: 5%;
   text-align: center;
   font-size: 1.5rem;
@@ -108,20 +132,19 @@ height: 135vh;
   margin-top: 10px;
 }
 
-.scroll-icon{
+.scroll-icon {
   color: blue;
 }
 
-.navbar-link{
+.navbar-link {
   padding: 12px;
 }
 
-.scroll-text-better,.scroll-text-best{
+.scroll-text-better, .scroll-text-best {
   opacity: 0;
 }
 
-
-.btn-basic{
+.btn-basic {
   font: bold 11px Arial;
   text-decoration: none;
   background-color: #EEEEEE;
@@ -145,4 +168,95 @@ height: 135vh;
   text-decoration: none;
 }
 
+/* BUSINESS SECTION */
 
+#business {
+    margin: 0auto;
+}
+
+.right-panel {
+  background: #2F4858;
+  height: auto;
+  width: 6%;
+  height: 135vh;
+  position: absolute;
+  left: 0;
+}
+
+.b-icon-container {
+  width: 100%;
+  height: 10%;
+  border-bottom: #b2b2b2 2px solid;
+  color: white;
+}
+
+.b-icon-container:first-child {
+  height: 20%;
+}
+
+.b-icon-container:first-child:hover {
+  background: none;
+  color: white;
+}
+
+.b-icon-container:hover {
+  background: #f3f3f3;
+  color: #b2b2b2;
+}
+
+.nav-txt {
+  margin: 10px 0 0 0;
+}
+
+.icon-nav {
+  font-size: 20px;
+}
+
+.content-business {
+  background: #D31027;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #EA384D, #D31027);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #EA384D, #D31027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 135vh;
+  width: 94%;
+  position: absolute;
+  right: 0;
+}
+
+/* MARKET PLACE SECTION */
+
+#market-place {
+  background: purple;
+}
+
+/* PERSONAL PAGE SECTION */
+
+#personal-page {
+  background: cadetblue;
+}
+
+/* PHONE SECTION */
+
+#phone {
+  background: orange;
+}
+
+/* TABlET  SECTION*/
+
+#tablet {
+  background: pink;
+}
+
+/* SKILLS SECTION */
+
+#skills {
+  background: green;
+}
+
+/* BOGOTÄ  DEV */
+
+#bogota-dev {
+  background: blue;
+}
