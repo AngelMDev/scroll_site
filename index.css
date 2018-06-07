@@ -228,11 +228,11 @@ body {
 }
 
 .logo-cont:hover {
-  box-shadow: 2px 5px 5px rgba(255,193,7 ,0.8);
+  box-shadow: 2px 5px 5px rgba(255,224,130 ,0.6);
 }
 
 .logo-cont:hover>* {
-  text-shadow: 4px 4px 0px rgba(255,193,7 ,0.8);
+  text-shadow: 4px 4px 0px rgba(255,224,130 ,0.6);
 }
 
 .logo-icon {
@@ -272,7 +272,45 @@ body {
 }
 
 /* MARKET PLACE SECTION */
+.content-business-2 {
+  background-image: url('ligth1.jpg');
+  background-size: cover;
+  height: 135vh;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
 
+.right-panel-2 {
+  height: auto;
+  width: 6%;
+  height: 135vh;
+  position: absolute;
+  right: 0;
+  z-index: 100;
+}
+
+.b-icon-container-2 {
+  width: 100%;
+  height: 10%;
+  border-bottom: #b2b2b2 2px solid;
+  color: white;
+}
+.b-icon-container-2:hover {
+  width: 100%;
+  height: 10%;
+  border-bottom: #f3f3f3 2px solid;
+  color: #b2b2b2;
+}
+.b-icon-container-2:first-child {
+  height: 20%;
+  border-bottom: none;
+  background: none;
+}
+
+
+
+/* MARKET PLACE SECTION */
 #market-place {
   background: purple;
 }
