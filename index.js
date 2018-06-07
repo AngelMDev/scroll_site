@@ -4,12 +4,13 @@ $(document).ready(function(){
   //There are 3 sections: "basic", "better", "best", each section takes 100% of the browser window.
   //we identify each section by these checkpoint variables.
   var sectionHeight=parseFloat($("#basic").css("height"))
-  var checkpoint1=$("#better").offset().top;
   var buffer=sectionHeight*0.35;
   var vh=sectionHeight-(buffer);
-  console.log("CP1",checkpoint1);
-  var checkpoint2=$("#best").offset().top;
-  console.log("CP2",checkpoint2);
+  var slide1=$("#better").offset().top;
+  var slide2=$("#best").offset().top;
+  var slide3=$("#mobile").offset().top;
+  var slide4=$("#tablet").offset().top;
+  var slide5=$("#contact").offset().top;
   var scrollLock=true;
   $(window).scroll(function() {
     //scroll stores the current scroll value in pixels.
@@ -18,15 +19,15 @@ $(document).ready(function(){
 //==========================BASIC TO BETTER=================================
     //check1percentage is the percentage (actually from 0 to 1) that the user has scrolled from the top of the page (plus a small buffer) to the #better section
     // 0 is at the top, 1 is when the #better section covers the whole browser window.
-    var check1percentage=(scroll-buffer)/(checkpoint1-buffer);
+    var check1percentage=(scroll-buffer)/(slide1-buffer);
     check1percentage = Math.min(1, Math.max(0, check1percentage)); //Clamp percentage to [0 , 1]
     console.log("Percentage 1",check1percentage);
-    if(scroll<checkpoint1){
+    if(scroll<slide1){
       $(".navbar").removeClass('navbar-better')
       $(".navbar-link").removeClass('btn-better')
       $("body").removeClass('body-better')
     }
-    if(scroll >= 0 && scroll < checkpoint1){
+    if(scroll >= 0 && scroll < slide1){
       changeAlpha($("#navbar-fol"),check1percentage,'background-color');
       changeAlpha($("#navbar-fol"),1-check1percentage,'border-color');
       switchElements($(".main-title-basic"),$(".main-title-better"),check1percentage);
@@ -44,19 +45,19 @@ $(document).ready(function(){
     //     scrollLock=false;
     //   },1000) 
     // }
-    if(scroll>=checkpoint1){
+    if(scroll>=slide1){
       $(".navbar").addClass('navbar-better')
       $(".navbar-link").addClass('btn-better')
       $("body").addClass('body-better')
     }
 //========================BETTER TO BEST============================//
-    var check2percentage=(scroll-checkpoint1-buffer)/(checkpoint2-checkpoint1-buffer);
+    var check2percentage=(scroll-slide1-buffer)/(slide2-slide1-buffer);
     check2percentage = Math.min(1, Math.max(0, check2percentage)); //Clamp percentage to [0 , 1]
     console.log("Percentage 2",check2percentage);
-    if(scroll<checkpoint2){
+    if(scroll<slide2){
 
     }
-    if(scroll >= checkpoint1 && scroll <= checkpoint2){
+    if(scroll >= slide1 && scroll <= slide2){
       switchElements($(".main-title-better"),$(".main-title-best"),check2percentage);
       switchElements($(".content-title-better"),$(".content-title-best"),check2percentage);
       switchElements($(".main-paragraph-better"),$(".main-paragraph-best"),check2percentage);
@@ -64,7 +65,34 @@ $(document).ready(function(){
       //changeAttribute($("#navbar-fol"),parseFloat($("#navbar-fol").css('height')),vh,check2percentage,"height","px");
       //changeColor($("#navbar-fol"),[0,0,0],'background-color',check1percentage);
     }
-    if(scroll>checkpoint2){
+    if(scroll>slide2){
+
+    }
+
+    //==================MOBILE TO TABLET==================//
+    var check4percentage=(scroll-slide3-buffer)/(slide4-slide3-buffer);
+    if(scroll<slide4){
+      $(".slide-title-tablet").addClass("invisible");
+    }
+    if(scroll >= slide3 && scroll <= slide4){
+      $(".slide-title-tablet").removeClass("invisible");
+      $(".slide-title-mobile").removeClass("invisible");
+      switchElementsSmooth($(".slide-title-mobile"),$(".slide-title-tablet"),check4percentage)
+    }
+    if(scroll>=slide4){
+      $(".slide-title-mobile").addClass("invisible");
+    }
+    //========================TABLET TO CONTACT================//
+    var check5percentage=(scroll-slide4-buffer)/(slide5-slide4-buffer);
+    var check5percentagedelayed=(scroll-slide4-buffer*2.5)/(slide5-slide4-buffer*2.5);
+    if(scroll<slide5){
+
+    }
+    if(scroll >= slide4 && scroll <= slide5){
+      switchElementsSmooth($(".slide-title-tablet"),$(".slide-logo-contact"),check5percentage,50,450,5,2)
+      $(".slide-title-contact").css('opacity',check5percentagedelayed);
+    }
+    if(scroll>=slide5){
 
     }
   });
@@ -119,6 +147,15 @@ function changeAttribute(element,startValue="0",endValue,percentage,property,uni
 function switchElements(currentElement,targetElement,percentage){
   currentElement.css('opacity',1-percentage);
   targetElement.css('opacity',percentage);
+}
+
+function switchElementsSmooth(currentElement,targetElement,percentage,offsetCurrent=50,offsetTarget=50,delayFactorCurrent=3.5,delayFactorTarget=3.5){
+  moveCurrent=(percentage-0.2)*offsetCurrent;
+  moveTarget=(percentage-0.2)*offsetTarget;
+  currentElement.css('opacity',1-percentage*delayFactorCurrent);
+  currentElement.css('margin-top',moveCurrent);
+  targetElement.css('opacity',-1+percentage*delayFactorTarget);
+  targetElement.css('margin-top',-moveTarget);
 }
 
 

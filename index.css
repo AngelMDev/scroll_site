@@ -5,8 +5,11 @@
 /******************************************************************************************************/
 
 .section-fol{
-height: 135vh;
+  height: 135vh;
+}
 
+.section-fol-short{
+  height: 105vh;
 }
 
 .body-basic{
@@ -18,12 +21,47 @@ height: 135vh;
 }
 
 #basic{
-
+  display: none;
 }
 
 #better{
   background: #efefef;
   font-family: inherit;
+  display: none;
+
+}
+#best{
+  display: none;
+}
+
+#mobile{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-image: url("./iphone-8-mockup.png");
+}
+
+#tablet{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-image: url("./ipad-mockup.png");
+}
+
+#contact{
+  background: #414345;
+  background-size: cover;
+  /* background-image: url("./Contact_bg.png"); */
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.logo-fol{
+  -moz-transform:scale(0.2);
+  -webkit-transform:scale(0.2);
+  transform:scale(0.2);
 }
 
 .title-container{
@@ -144,5 +182,54 @@ height: 135vh;
   font-weight: bold;
   text-decoration: none;
 }
+
+.invisible{
+  display:none;
+}
+
+.slide-title-mobile{ 
+  width: 600px;
+  margin: 0;
+  margin-top: -35;
+  position: fixed;
+  font-size: 3rem;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 30%;
+  left:5%;
+}
+
+.slide-title-tablet{
+  width: 250px;
+  position: fixed;
+  font-size: 3rem;
+  color: white;
+  opacity: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 50%;
+  left:5%;
+}
+
+.slide-logo-contact{
+  
+  top: 18%;
+  position: fixed;
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  opacity: 0;
+}
+.slide-title-contact{
+  opacity: 0;
+  font-size: 2rem;
+  top: 20%;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
 
 
