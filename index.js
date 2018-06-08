@@ -43,7 +43,7 @@ $(document).ready(function(){
     //   $(window).scrollTop(checkpoint1);
     //   setTimeout(function(){
     //     scrollLock=false;
-    //   },1000) 
+    //   },1000)
     // }
     if(scroll>=slide1){
       $(".navbar").addClass('navbar-better')
@@ -131,7 +131,7 @@ function changeColor(element,targetColor,property,percentage){
 //element(Jquery Element) is the element that we want to change the alpha of
 //alpha(float) is the alpha value that we want the element to take (from 0 to 1)
 //property (string) is the attribute or property what we want to change (background-color, border-color, etc.)
-function changeAlpha(element, alpha, property) { 
+function changeAlpha(element, alpha, property) {
   b = element.css(property);
   newValue= ('rgba' + b.slice(b.indexOf('('), ( (b.match(/,/g).length == 2) ? -1 : b.lastIndexOf(',') - b.length) ) + ', '+alpha+')');
   element.css(property,newValue)
@@ -139,7 +139,7 @@ function changeAlpha(element, alpha, property) {
 
 //This function gradually changes an element's attribute value depending on a percentage.
 //IT DOESN'T WORK FOR COLORS!
-//Usage: 
+//Usage:
 //element: Jquery Element - it is the element we want to change.
 //startValue: float - it is the value that we want the element to take at 0. If null it takes the value from the object
 //endValue: float - it is the value that we want the element to take at 1.

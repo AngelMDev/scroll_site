@@ -1,8 +1,15 @@
 /******************************************************************************************************/
+
 /*                                                                                                    */
+
 /* !!!! WHEN ASSIGNING COLORS USE RGBA VALUES ONLY IF YOU WANT TO GRADUALLY CHANGE THEM USING JS !!!! */
+
 /*                                                                                                    */
+
 /******************************************************************************************************/
+body {
+  margin: 0px;
+}
 
 .section-fol{
   height: 135vh;
@@ -11,20 +18,50 @@
 .section-fol-short{
   height: 105vh;
 }
+/* FLEXBOX */
 
-.body-basic{
-
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.body-better{
-  font-family: Arial, Helvetica, sans-serif;
+.flex-column-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 #basic{
   display: none;
 }
 
-#better{
+.section-fol {
+  height: 135vh;
+}
+
+.body-basic {}
+
+.body-better {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#better {
   background: #efefef;
   font-family: inherit;
   display: none;
@@ -70,25 +107,26 @@
   transform:scale(0.3);
 }
 
-.title-container{
+.title-container {
   top: 15px;
   text-align: center;
   position: fixed;
 }
 
-.main-title-basic,.main-title-better,.main-title-best{
+.main-title-basic, .main-title-better, .main-title-best {
+  font-size: 3rem;
 }
 
-.main-title-better,.main-title-best{
+.main-title-better, .main-title-best {
   opacity: 0;
 }
 
-.main-title-better{
+.main-title-better {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar{
-  top:150px;
+.navbar {
+  top: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -99,50 +137,48 @@
   position: fixed;
   width: 60%;
   background-color: rgba(202, 235, 242, 0);
-  
 }
 
-.navbar-better{
-  border-style:none;
-  background-color: rgba(202, 235, 242, 1);  
+.navbar-better {
+  border-style: none;
+  background-color: rgba(202, 235, 242, 1);
 }
 
-.center{
+.center {
   margin: auto;
   left: 0;
   right: 0;
 }
 
-
-.content{
+.content {
   top: 250px;
   margin: 0 auto;
   width: 70%;
   position: fixed;
 }
 
-.main-paragraph-basic,.main-paragraph-better,.main-paragraph-best{
+.main-paragraph-basic, .main-paragraph-better, .main-paragraph-best {
   font-size: 1.2rem;
 }
 
-.main-paragraph-best,.main-paragraph-better{
+.main-paragraph-best, .main-paragraph-better {
   opacity: 0;
 }
 
-.content-title-basic,.content-title-better,.content-title-best{
+.content-title-basic, .content-title-better, .content-title-best {
   text-align: center;
   font-size: 2.5rem;
 }
 
-.content-title-better,.content-title-best{
+.content-title-better, .content-title-best {
   opacity: 0;
 }
 
-.content-title-better{
+.content-title-better {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.scroll-down-container{
+.scroll-down-container {
   padding: 5%;
   text-align: center;
   font-size: 1.5rem;
@@ -151,20 +187,19 @@
   margin-top: 10px;
 }
 
-.scroll-icon{
+.scroll-icon {
   color: blue;
 }
 
-.navbar-link{
+.navbar-link {
   padding: 12px;
 }
 
-.scroll-text-better,.scroll-text-best{
+.scroll-text-better, .scroll-text-best {
   opacity: 0;
 }
 
-
-.btn-basic{
+.btn-basic {
   font: bold 11px Arial;
   text-decoration: none;
   background-color: #EEEEEE;
@@ -311,4 +346,183 @@
 
 
 
+/* BUSINESS SECTION */
 
+#business {
+  margin: 0auto;
+}
+
+.right-panel {
+  background: #2F4858;
+  height: auto;
+  width: 6%;
+  height: 135vh;
+  position: absolute;
+  left: 0;
+}
+
+.b-icon-container {
+  width: 100%;
+  height: 10%;
+  border-bottom: #b2b2b2 2px solid;
+  color: white;
+}
+
+.b-icon-container:first-child {
+  height: 20%;
+}
+
+.b-icon-container:first-child:hover {
+  background: none;
+  color: white;
+}
+
+.b-icon-container:hover {
+  background: #f3f3f3;
+  color: #b2b2b2;
+}
+
+.nav-txt {
+  margin: 10px 0 0 0;
+}
+
+.icon-nav {
+  font-size: 20px;
+}
+
+.logo-cont {
+  margin-top: 50px;
+  height: 250px;
+  width: 250px;
+  border-radius: 12px;
+  border: 6px solid white;
+}
+
+.logo-cont:hover {
+  box-shadow: 2px 5px 5px rgba(255,224,130 ,0.6);
+}
+
+.logo-cont:hover>* {
+  text-shadow: 4px 4px 0px rgba(255,224,130 ,0.6);
+}
+
+.logo-icon {
+  font-size: 100px;
+  color: white;
+}
+
+.logo-text {
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  margin: 10px 15px;
+}
+
+.text-sub-title {
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+.text-sub-title2 {
+  color: white;
+  font-size: 20px;
+}
+
+.content-business {
+  background: #000000;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #3E2723, #e74c3c);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #3E2723, #e74c3c);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 135vh;
+  width: 94%;
+  position: absolute;
+  right: 0;
+}
+
+/* BUSINESS 2 SECTION */
+.content-business-2 {
+  background-image: url('ligth1.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 135vh;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+.right-panel-2 {
+  height: auto;
+  width: 6%;
+  height: 135vh;
+  position: absolute;
+  right: 0;
+  z-index: 100;
+}
+
+.b-icon-container-2 {
+  width: 100%;
+  height: 10%;
+  border-bottom: #b2b2b2 2px solid;
+  color: white;
+}
+.b-icon-container-2:hover {
+  width: 100%;
+  height: 10%;
+  border-bottom: #f3f3f3 2px solid;
+  color: #b2b2b2;
+}
+.b-icon-container-2:first-child {
+  height: 20%;
+  border-bottom: none;
+  background: none;
+}
+
+
+
+/* MARKET PLACE SECTION */
+#market-place {}
+.m-cont {
+  height: 135vh;
+  background: #f5f5f5;
+  width: 100%;
+  left: 0;
+  position: absolute;
+}
+
+.nav-bar{
+  height: 100px;
+  width: 100%;
+  background: #E0E0E0;
+  display: flex;
+  align-items: center;
+}
+.m-nav-title {
+  font-family: 'Alex Brush';
+  font-size: 50px;
+  margin-left: 20px;
+}
+.cloth-cont {
+  height: 60px;
+  width: 40vw;
+  background: #fffcfc;
+  margin: 0 auto;
+  margin-top: 25px;
+  border-radius: 25px;
+}
+
+/* PERSONAL PAGE SECTION */
+
+#personal-page {
+  background: cadetblue;
+}
+
+/* SKILLS SECTION */
+
+#skills {
+  background: green;
+}
