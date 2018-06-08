@@ -311,8 +311,34 @@ body {
 
 
 /* MARKET PLACE SECTION */
-#market-place {
-  background: purple;
+#market-place {}
+.m-cont {
+  height: 135vh;
+  background: #f5f5f5;
+  width: 100%;
+  left: 0;
+  position: absolute;
+}
+
+.nav-bar{
+  height: 100px;
+  width: 100%;
+  background: #E0E0E0;
+  display: flex;
+  align-items: center;
+}
+.m-nav-title {
+  font-family: 'Alex Brush';
+  font-size: 50px;
+  margin-left: 20px;
+}
+.cloth-cont {
+  height: 60px;
+  width: 40vw;
+  background: #fffcfc;
+  margin: 0 auto;
+  margin-top: 25px;
+  border-radius: 25px;
 }
 
 /* PERSONAL PAGE SECTION */
