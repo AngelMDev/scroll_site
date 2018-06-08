@@ -71,7 +71,7 @@ $(document).ready(function(){
 
     //==================MOBILE TO TABLET==================//
     var check4percentage=(scroll-slide3-buffer)/(slide4-slide3-buffer);
-    if(scroll<slide4){
+    if(scroll<slide3){
       $(".slide-title-tablet").addClass("invisible");
     }
     if(scroll >= slide3 && scroll <= slide4){
@@ -81,19 +81,28 @@ $(document).ready(function(){
     }
     if(scroll>=slide4){
       $(".slide-title-mobile").addClass("invisible");
+      $(".slide-title-tablet").removeClass("invisible");
     }
     //========================TABLET TO CONTACT================//
     var check5percentage=(scroll-slide4-buffer)/(slide5-slide4-buffer);
     var check5percentagedelayed=(scroll-slide4-buffer*2.5)/(slide5-slide4-buffer*2.5);
-    if(scroll<slide5){
-
+    if(scroll<slide4){
+      $(".slide-logo-contact").addClass("invisible");
+      $(".slide-title-contact").addClass("invisible");
     }
-    if(scroll >= slide4 && scroll <= slide5){
-      switchElementsSmooth($(".slide-title-tablet"),$(".slide-logo-contact"),check5percentage,50,450,5,2)
+    if(scroll >= slide4 && scroll < slide5){
+      $(".slide-logo-contact").removeClass("invisible");
+      $(".slide-title-contact").removeClass("invisible");
+      $(".slide-logo-contact").removeClass("logo-normal-state");
+      switchElementsSmooth($(".slide-title-tablet"),$(".slide-logo-contact"),check5percentage,0,350,2.5,1.5);
+      changeRotation($(".slide-logo-contact"),90,0,check5percentagedelayed)
       $(".slide-title-contact").css('opacity',check5percentagedelayed);
     }
     if(scroll>=slide5){
-
+      $(".slide-logo-contact").addClass("logo-normal-state");
+      $(".slide-title-contact").css('opacity',1);
+      $(".slide-title-contact").removeClass("invisible");
+      $(".slide-logo-contact").removeClass("invisible");
     }
   });
 })
@@ -142,6 +151,11 @@ function changeAttribute(element,startValue="0",endValue,percentage,property,uni
   element.css(property,newValue + unit)
 }
 
+function changeRotation(element,startValue="0",endValue,percentage){
+  newValue = ((endValue - startValue) * percentage) + startValue
+  element.css('transform','rotateY('+newValue+'deg)');
+}
+
 //This function "switches" two elements by changing their opacity
 //It takes two Jquery elements and the scroll percentage
 function switchElements(currentElement,targetElement,percentage){
@@ -153,9 +167,14 @@ function switchElementsSmooth(currentElement,targetElement,percentage,offsetCurr
   moveCurrent=(percentage-0.2)*offsetCurrent;
   moveTarget=(percentage-0.2)*offsetTarget;
   currentElement.css('opacity',1-percentage*delayFactorCurrent);
-  currentElement.css('margin-top',moveCurrent);
+  if(offsetCurrent!=0){
+    currentElement.css('margin-top',moveCurrent);
+  } 
   targetElement.css('opacity',-1+percentage*delayFactorTarget);
-  targetElement.css('margin-top',-moveTarget);
+  if(offsetTarget!=0){
+    targetElement.css('margin-top',-moveTarget);
+    console.log(-moveTarget);
+  }
 }
 
 

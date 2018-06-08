@@ -34,6 +34,10 @@
   display: none;
 }
 
+.default-fol-font{
+  font-size: 3rem;
+}
+
 #mobile{
   background-repeat: no-repeat;
   background-size: cover;
@@ -51,7 +55,9 @@
 }
 
 #contact{
-  background: #414345;
+  background: #009FFF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #ec2F4B, #009FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
   background-size: cover;
   /* background-image: url("./Contact_bg.png"); */
   background-repeat: no-repeat;
@@ -59,9 +65,9 @@
 }
 
 .logo-fol{
-  -moz-transform:scale(0.2);
-  -webkit-transform:scale(0.2);
-  transform:scale(0.2);
+  -moz-transform:scale(0.3);
+  -webkit-transform:scale(0.3);
+  transform:scale(0.3);
 }
 
 .title-container{
@@ -71,7 +77,6 @@
 }
 
 .main-title-basic,.main-title-better,.main-title-best{
-  font-size: 3rem;
 }
 
 .main-title-better,.main-title-best{
@@ -192,7 +197,6 @@
   margin: 0;
   margin-top: -35;
   position: fixed;
-  font-size: 3rem;
   color:white;
   font-family: Arial, Helvetica, sans-serif;
   top: 30%;
@@ -202,7 +206,6 @@
 .slide-title-tablet{
   width: 250px;
   position: fixed;
-  font-size: 3rem;
   color: white;
   opacity: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -211,24 +214,100 @@
 }
 
 .slide-logo-contact{
-  
-  top: 18%;
+  top: 7%;
   position: fixed;
   text-align: center;
   color: white;
-  font-size: 3rem;
   opacity: 0;
+  transform: rotateY(90deg);
 }
+
+.logo-normal-state{
+  opacity: 0.8 !important;
+  transform: rotateY(0deg) !important;
+  margin-top: -279px !important;
+}
+
 .slide-title-contact{
   opacity: 0;
-  font-size: 2rem;
-  top: 20%;
+  top: 22%;
   text-align: center;
   width: 100%;
   position: fixed;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.slide-content-contact{
+  margin: 50px;
+}
+
+.btn-fol{
+  margin: 20px;
+  width: 180px;
+  height: 60px;
+  padding: 15px;
+  border:none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 3199px) and (min-width: 2000px) {
+  .default-fol-font{
+    font-size: 3.5rem;
+  }
+
+  .slide-title-mobile{ 
+    width: 1000px;
+    left: 10%;
+  }
+
+  .logo-fol{
+    -moz-transform:scale(0.4);
+    -webkit-transform:scale(0.4);
+    transform:scale(0.4);
+  }
+
+  .slide-logo-contact{
+    top: 10%;
+  }
+
+  .slide-title-contact{
+    top: 25%;
+  }
+}
+
+@media only screen and (min-width: 3200px){
+
+  .logo-fol{
+    -moz-transform:scale(0.6);
+    -webkit-transform:scale(0.6);
+    transform:scale(0.6);
+  }
+
+  .slide-logo-contact{
+    top: 10%;
+  }
+
+  .slide-title-contact{
+    top: 25%;
+  }
+
+  .default-fol-font{
+    font-size: 4.5rem;
+  }
+
+  .slide-title-mobile{ 
+    width: 1200px;
+    left: 12%;
+  }
+  
+}
+
+
 
 
 
