@@ -37,6 +37,14 @@
   align-items: center;
 }
 
+.flex-row-start {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+* box-sizing: border-box
 ///////////////////////
 body {
   margin: 0px;
@@ -320,10 +328,15 @@ body {
   position: absolute;
 }
 
-.nav-bar{
+.market-content-up {
+  margin-top: 5vh;
+  display: flex;
+  justify-content: space-around;
+}
+.m-nav-bar{
   height: 100px;
   width: 100%;
-  background: #E0E0E0;
+  border-bottom:2px solid #E0E0E0;
   display: flex;
   align-items: center;
 }
@@ -331,15 +344,83 @@ body {
   font-family: 'Alex Brush';
   font-size: 50px;
   margin-left: 20px;
+  color: #00BECC;
+  font-weight: 600;
 }
 .cloth-cont {
-  height: 60px;
+  height: 70px;
   width: 40vw;
   background: #fffcfc;
   margin: 0 auto;
   margin-top: 25px;
   border-radius: 25px;
 }
+
+.circle-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: white;
+  margin: 0 10px;
+  border: 2px solid #f3f3f3;
+  color: #b2b2b2;
+}
+.circle-btn:hover {
+  box-shadow: 0 10px 20px rgba(0,212,183,0.19), 0 6px 6px rgba(0,212,183,0.23);
+}
+
+.item-list-col {
+  width: 100%;
+  height: 400px;
+  padding: 0 !important;
+  background:gray;
+}
+
+.item-box {
+  width: 100%;
+  height: 70px;
+  background: white;
+  border-bottom: 1px solid #00BECC;
+}
+.m-box-active,
+.item-box:hover {
+  border-top: 1px solid white;
+  color: white;
+  background: #00BECC;
+}
+.m-box-txt-active {
+  color: white !important;
+}
+.item-box:hover > .market-txt {
+  color: white;
+}
+.item-box:hover > .circle-btn {
+  border: 2px solid #E0E0E0;
+  color: #00BECC;
+}
+
+.item-box:hover > .nav-icon {
+  color: #00BECC;
+}
+
+.market-txt {
+  color: #00BECC;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 0 0 20px;
+}
+
+.market-img {
+    height: 418px;
+}
+@media (min-width: screen) and (max 767px){
+
+}
+
+
+----------------------------
+Slider
+-------------------------------- */
 
 /* PERSONAL PAGE SECTION */
 
