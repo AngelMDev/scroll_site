@@ -48,7 +48,7 @@ body {
 }
 
 #basic{
-  display: none;
+
 }
 
 .section-fol {
@@ -64,8 +64,6 @@ body {
 #better {
   background: #efefef;
   font-family: inherit;
-  display: none;
-
 }
 #best{
   display: none;
@@ -101,10 +99,11 @@ body {
   background-position: center center;
 }
 
-.logo-fol{
-  -moz-transform:scale(0.3);
-  -webkit-transform:scale(0.3);
-  transform:scale(0.3);
+#skills{
+  background: #0F2027;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
 }
 
 .title-container {
@@ -140,8 +139,9 @@ body {
 }
 
 .navbar-better {
-  border-style: none;
-  background-color: rgba(202, 235, 242, 1);
+  border-style: none !important;
+  background-color: rgba(202, 235, 242, 1) !important;
+  width: 100% !important;
 }
 
 .center {
@@ -163,6 +163,10 @@ body {
 
 .main-paragraph-best, .main-paragraph-better {
   opacity: 0;
+}
+
+.main-paragraph-better{
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .content-title-basic, .content-title-better, .content-title-best {
@@ -197,6 +201,7 @@ body {
 
 .scroll-text-better, .scroll-text-best {
   opacity: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .btn-basic {
@@ -226,125 +231,6 @@ body {
 .invisible{
   display:none;
 }
-
-.slide-title-mobile{ 
-  width: 600px;
-  margin: 0;
-  margin-top: -35;
-  position: fixed;
-  color:white;
-  font-family: Arial, Helvetica, sans-serif;
-  top: 30%;
-  left:5%;
-}
-
-.slide-title-tablet{
-  width: 250px;
-  position: fixed;
-  color: white;
-  opacity: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  top: 50%;
-  left:5%;
-}
-
-.slide-logo-contact{
-  top: 7%;
-  position: fixed;
-  text-align: center;
-  color: white;
-  opacity: 0;
-  transform: rotateY(90deg);
-}
-
-.logo-normal-state{
-  opacity: 0.8 !important;
-  transform: rotateY(0deg) !important;
-  margin-top: -279px !important;
-}
-
-.slide-title-contact{
-  opacity: 0;
-  top: 22%;
-  text-align: center;
-  width: 100%;
-  position: fixed;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.slide-content-contact{
-  margin: 50px;
-}
-
-.btn-fol{
-  margin: 20px;
-  width: 180px;
-  height: 60px;
-  padding: 15px;
-  border:none;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  background-color: white;
-  color: black;
-  text-decoration: none;
-}
-
-@media only screen and (max-width: 3199px) and (min-width: 2000px) {
-  .default-fol-font{
-    font-size: 3.5rem;
-  }
-
-  .slide-title-mobile{ 
-    width: 1000px;
-    left: 10%;
-  }
-
-  .logo-fol{
-    -moz-transform:scale(0.4);
-    -webkit-transform:scale(0.4);
-    transform:scale(0.4);
-  }
-
-  .slide-logo-contact{
-    top: 10%;
-  }
-
-  .slide-title-contact{
-    top: 25%;
-  }
-}
-
-@media only screen and (min-width: 3200px){
-
-  .logo-fol{
-    -moz-transform:scale(0.6);
-    -webkit-transform:scale(0.6);
-    transform:scale(0.6);
-  }
-
-  .slide-logo-contact{
-    top: 10%;
-  }
-
-  .slide-title-contact{
-    top: 25%;
-  }
-
-  .default-fol-font{
-    font-size: 4.5rem;
-  }
-
-  .slide-title-mobile{ 
-    width: 1200px;
-    left: 12%;
-  }
-  
-}
-
-
-
-
 
 /* BUSINESS SECTION */
 
@@ -482,10 +368,8 @@ body {
   background: none;
 }
 
-
-
 /* MARKET PLACE SECTION */
-#market-place {}
+#marketplace {}
 .m-cont {
   height: 135vh;
   background: #f5f5f5;
@@ -521,8 +405,263 @@ body {
   background: cadetblue;
 }
 
+
+
+/* MOBILE */
+
+.slide-title-mobile{ 
+  width: 600px;
+  margin: 0;
+  margin-top: -35;
+  position: fixed;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 30%;
+  left:5%;
+  opacity: 0;
+}
+
+/* TABLET */
+.slide-title-tablet{
+  width: 250px;
+  position: fixed;
+  color: white;
+  opacity: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 50%;
+  left:5%;
+}
+
+/* CONTACT US */
+
+.logo-fol{
+  -moz-transform:scale(0.3);
+  -webkit-transform:scale(0.3);
+  transform:scale(0.3);
+}
+
+.slide-logo-contact{
+  top: 7%;
+  position: fixed;
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transform: rotateY(90deg);
+  margin-top: -279px;
+}
+
+.logo-normal-state{
+  opacity: 0.8 !important;
+  transform: rotateY(0deg) !important;
+  margin-top: -279px !important;
+}
+
+.slide-title-contact{
+  opacity: 0;
+  top: 22%;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.slide-content-contact{
+  margin: 50px;
+}
+
+.btn-fol{
+  margin: 20px;
+  width: 180px;
+  height: 60px;
+  padding: 15px;
+  border:none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+}
+
+
 /* SKILLS SECTION */
 
-#skills {
-  background: green;
+.colored{
+  
+}
+
+.technologies-icon-container{
+}
+
+.tech-icon{
+  margin: 15px;
+  margin-bottom: 15px;
+  font-size: 5rem;
+}
+
+.tech-icon > p{
+  opacity: 0;
+  font-size: 1.2rem;
+  margin: 0;
+  color: white;
+  transition: opacity .45s;
+}
+
+.tech-icon:hover > p{
+  opacity: 1;
+}
+
+.slide-title-skills{
+  width: 80%;
+  color: white;
+  opacity: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 5%;
+  left:5%;
+}
+
+.slide-title-skills > h1{
+  margin: 0;
+}
+
+.slide-subtitle-skills{
+  width: 60%;
+  color: white;
+  opacity: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left:30%;
+  right: 5px;
+  text-align: right;
+}
+
+.slide-content-skills{
+  padding-top: 5%;
+  opacity: 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 550px) and (orientation: portrait)  {
+  #mobile{
+    background-image: url("./iphone-8-mockup-portrait.png");
+  }
+
+  #tablet{
+    background-image: url("./ipad-mockup-portrait.png");
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  #mobile{
+    background-image: url("./iphone-8-mockup-small-portrait.png");
+  }
+
+  #tablet{
+    background-image: url("./ipad-mockup-small-portrait.png");
+  }
+}
+
+@media only screen and (orientation: landscape) and (max-width: 1366px){
+  #mobile{
+    background-image: url("./iphone-8-mockup-small.png");
+  }
+
+  #tablet{
+    background-image: url("./ipad-mockup-small.png");
+  }
+}
+
+/*1440p */
+@media only screen and (max-width: 3199px) and (min-width: 2000px) {
+  .default-fol-font{
+    font-size: 3.5rem;
+  }
+
+  .slide-title-mobile{ 
+    width: 1000px;
+    left: 10%;
+  }
+
+  .logo-fol{
+    -moz-transform:scale(0.4);
+    -webkit-transform:scale(0.4);
+    transform:scale(0.4);
+  }
+
+  .slide-logo-contact{
+    top: 10%;
+  }
+
+  .slide-title-contact{
+    top: 25%;
+  }
+
+  .tech-icon{
+    font-size: 8rem;
+    margin: 25px;
+  }
+
+  .tech-icon > p{
+    font-size: 2rem;
+  }
+
+  .section-fol{
+    height: 110vh;
+  }
+  
+}
+
+/* 4K UHD */
+@media only screen and (min-width: 3200px){
+
+  .logo-fol{
+    -moz-transform:scale(0.6);
+    -webkit-transform:scale(0.6);
+    transform:scale(0.6);
+  }
+
+  .slide-logo-contact{
+    top: 10%;
+  }
+
+  .slide-title-contact{
+    top: 25%;
+  }
+
+  .default-fol-font{
+    font-size: 4.5rem;
+  }
+
+  .slide-title-mobile{ 
+    width: 1200px;
+    left: 12%;
+  }
+
+  .tech-icon{
+    font-size: 10rem;
+    margin: 30px;
+    margin-right: 35px;
+    margin-left: 40px;
+  }
+
+  .tech-icon > p{
+    font-size: 2.5rem;
+  }
+
+  #skills{
+    padding-top: 5%;
+    padding-bottom: 2.5%;
+  }
+
+  .slide-subtitle-skills{
+    padding-top: 5%;
+  }
+
+  .slide-title-skills{
+    padding-bottom: 2%;
+  }
+
+  .section-fol{
+    height: 105vh;
+  }
 }

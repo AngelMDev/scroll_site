@@ -1,17 +1,20 @@
 
 $(document).ready(function(){
   $(window).scrollTop(0);
-  //There are 3 sections: "basic", "better", "best", each section takes 100% of the browser window.
-  //we identify each section by these checkpoint variables.
   var sectionHeight=parseFloat($("#basic").css("height"))
   var buffer=sectionHeight*0.35;
+  var buffer_short=sectionHeight*0.05
   var vh=sectionHeight-(buffer);
+  var vh_short=sectionHeight-buffer_short;
+//we identify each section by these slide variables. slide0 is not defined, but it is the first one.
   var slide1=$("#better").offset().top;
-  var slide2=$("#best").offset().top;
-  var slide3=$("#mobile").offset().top;
-  var slide4=$("#tablet").offset().top;
-  var slide5=$("#contact").offset().top;
-  var scrollLock=true;
+  var slide2=$("#business").offset().top;
+  var slide3=$("#marketplace").offset().top;
+  var slide4=$("#personal").offset().top;
+  var slide5=$("#mobile").offset().top;
+  var slide6=$("#tablet").offset().top;
+  var slide7=$("#skills").offset().top;
+  var slide8=$("#contact").offset().top;
   $(window).scroll(function() {
     //scroll stores the current scroll value in pixels.
     var scroll=$(window).scrollTop();
@@ -21,13 +24,17 @@ $(document).ready(function(){
     // 0 is at the top, 1 is when the #better section covers the whole browser window.
     var check1percentage=(scroll-buffer)/(slide1-buffer);
     check1percentage = Math.min(1, Math.max(0, check1percentage)); //Clamp percentage to [0 , 1]
-    console.log("Percentage 1",check1percentage);
     if(scroll<slide1){
       $(".navbar").removeClass('navbar-better')
       $(".navbar-link").removeClass('btn-better')
       $("body").removeClass('body-better')
     }
     if(scroll >= 0 && scroll < slide1){
+      $(".main-title-basic").removeClass("invisible");
+      $(".content-title-basic").removeClass("invisible");
+      $(".main-paragraph-basic").removeClass("invisible");
+      $(".scroll-text-basic").removeClass("invisible");
+      $(".navbar").removeClass('navbar-better');
       changeAlpha($("#navbar-fol"),check1percentage,'background-color');
       changeAlpha($("#navbar-fol"),1-check1percentage,'border-color');
       switchElements($(".main-title-basic"),$(".main-title-better"),check1percentage);
@@ -36,69 +43,144 @@ $(document).ready(function(){
       switchElements($(".scroll-text-basic"),$(".scroll-text-better"),check1percentage);
       changeAttribute($("#navbar-fol"),60,100,check1percentage,"width","%");
       //changeColor($("#navbar-fol"),[0,0,0],'background-color',check1percentage);
-      scrollLock=true;
     }
-    // if(scroll>=checkpoint1 && scrollLock){
-    //   console.log("locked")
-    //   $(window).scrollTop(checkpoint1);
-    //   setTimeout(function(){
-    //     scrollLock=false;
-    //   },1000)
-    // }
     if(scroll>=slide1){
-      $(".navbar").addClass('navbar-better')
-      $(".navbar-link").addClass('btn-better')
-      $("body").addClass('body-better')
+      $(".main-title-basic").addClass("invisible");
+      $(".content-title-basic").addClass("invisible");
+      $(".main-paragraph-basic").addClass("invisible");
+      $(".scroll-text-basic").addClass("invisible");
+      $(".navbar").addClass('navbar-better');
+      $(".navbar-link").addClass('btn-better');
+      $("body").addClass('body-better');
+      changeAlpha($("#navbar-fol"),1,'background-color');
+      changeAlpha($("#navbar-fol"),0,'border-color');
     }
-//========================BETTER TO BEST============================//
+//========================BETTER TO BUSINESS============================//
     var check2percentage=(scroll-slide1-buffer)/(slide2-slide1-buffer);
     check2percentage = Math.min(1, Math.max(0, check2percentage)); //Clamp percentage to [0 , 1]
-    console.log("Percentage 2",check2percentage);
     if(scroll<slide2){
 
     }
     if(scroll >= slide1 && scroll <= slide2){
-      switchElements($(".main-title-better"),$(".main-title-best"),check2percentage);
-      switchElements($(".content-title-better"),$(".content-title-best"),check2percentage);
-      switchElements($(".main-paragraph-better"),$(".main-paragraph-best"),check2percentage);
-      switchElements($(".scroll-text-better"),$(".scroll-text-best"),check2percentage);
-      //changeAttribute($("#navbar-fol"),parseFloat($("#navbar-fol").css('height')),vh,check2percentage,"height","px");
-      //changeColor($("#navbar-fol"),[0,0,0],'background-color',check1percentage);
+      $(".main-title-better").removeClass("invisible");
+      $(".content-title-better").removeClass("invisible");
+      $(".main-paragraph-better").removeClass("invisible");
+      $(".scroll-text-better").removeClass("invisible");
+      $("#navbar-fol").removeClass("invisible");
+      $(".scroll-down-container").removeClass("invisible");
+      $(".content-business-2").css("opacity",check2percentage);
+      $(".main-title-better").css("opacity",1-check2percentage);
+      $(".content-title-better").css("opacity",1-check2percentage);
+      $(".main-paragraph-better").css("opacity",1-check2percentage);
+      $(".scroll-text-better").css("opacity",1-check2percentage);
+      $("#navbar-fol").css("opacity",1-check2percentage);
+      $(".scroll-down-container").css("opacity",1-check2percentage);
+    }
+    if(scroll>slide2){
+      $(".main-title-better").addClass("invisible");
+      $(".content-title-better").addClass("invisible");
+      $(".main-paragraph-better").addClass("invisible");
+      $(".scroll-text-better").addClass("invisible");
+      $("#navbar-fol").addClass("invisible");
+      $(".scroll-down-container").addClass("invisible");
+    }
+
+  //==================BUSINESS TO MARKETPLACE==================//
+    var check2percentage=(scroll-slide1-buffer)/(slide2-slide1-buffer);
+    check2percentage = Math.min(1, Math.max(0, check2percentage)); //Clamp percentage to [0 , 1]
+    if(scroll<slide2){
+
+    }
+    if(scroll >= slide1 && scroll <= slide2){
+
     }
     if(scroll>slide2){
 
     }
 
-    //==================MOBILE TO TABLET==================//
-    var check4percentage=(scroll-slide3-buffer)/(slide4-slide3-buffer);
-    if(scroll<slide3){
+    //==================MARKETPLACE TO PERSONAL==================//
+    var check2percentage=(scroll-slide1-buffer)/(slide2-slide1-buffer);
+    check2percentage = Math.min(1, Math.max(0, check2percentage)); //Clamp percentage to [0 , 1]
+    if(scroll<slide2){
+
+    }
+    if(scroll >= slide1 && scroll <= slide2){
+
+    }
+    if(scroll>slide2){
+
+    }
+
+  //==================PERSONAL TO MOBILE==================//
+    var check5percentage=(scroll-slide4-buffer)/(slide5-slide4-buffer);
+    check5percentage = Math.min(1, Math.max(0, check5percentage)); //Clamp percentage to [0 , 1]
+    if(scroll<slide4){
+      $(".slide-title-mobile").addClass("invisible");
+    }
+    if(scroll >= slide4 && scroll <= slide5){
+      $(".slide-title-mobile").removeClass("invisible");
+      $(".slide-title-mobile").css('opacity',check5percentage);
+    }
+    if(scroll>slide5){
+
+    }
+  //==================MOBILE TO TABLET==================//
+    var check6percentage=(scroll-slide5-buffer)/(slide6-slide5-buffer);
+    if(scroll<slide5){
       $(".slide-title-tablet").addClass("invisible");
     }
-    if(scroll >= slide3 && scroll <= slide4){
+    if(scroll >= slide5 && scroll <= slide6){
       $(".slide-title-tablet").removeClass("invisible");
       $(".slide-title-mobile").removeClass("invisible");
-      switchElementsSmooth($(".slide-title-mobile"),$(".slide-title-tablet"),check4percentage)
+      switchElementsSmooth($(".slide-title-mobile"),$(".slide-title-tablet"),check6percentage)
     }
-    if(scroll>=slide4){
+    if(scroll>=slide6){
       $(".slide-title-mobile").addClass("invisible");
       $(".slide-title-tablet").removeClass("invisible");
     }
-    //========================TABLET TO CONTACT================//
-    var check5percentage=(scroll-slide4-buffer)/(slide5-slide4-buffer);
-    var check5percentagedelayed=(scroll-slide4-buffer*2.5)/(slide5-slide4-buffer*2.5);
-    if(scroll<slide4){
-      $(".slide-logo-contact").addClass("invisible");
+    //==================TABLET TO SKILLS==================//
+    var check7percentage=(scroll-slide6-buffer)/(slide7-slide6-buffer);
+    var check7percentagehalfway=(check7percentage-0.5)
+    check7percentage = Math.min(1, Math.max(0, check7percentage)); //Clamp percentage to [0 , 1]
+    check7percentagehalfway=Math.min(1, Math.max(0, check7percentagehalfway));
+    var check7percentagedelayed=(scroll-slide6-buffer*2.5)/(slide7-slide6-buffer*2.5);
+    if(scroll<slide6){
+
+    }
+    if(scroll >= slide6 && scroll <= slide7){
+      $(".technologies-icon-container").css("filter","grayscale("+(1-check7percentagedelayed)*100+"%)");
+      switchElements($(".slide-title-tablet"),$(".slide-title-skills"),check7percentage,3.5,1);
+      switchElements($(".slide-title-tablet"),$(".slide-content-skills"),check7percentage,3.5,2);
+    }
+    if(scroll>slide7){
+      $(".slide-title-tablet").removeClass("invisible");
+      $(".slide-title-skills").css("opacity",1);
+      $(".slide-content-skills").css("opacity",1);
+    }
+    //========================SKILLS TO CONTACT================//
+    var check8percentage=(scroll-slide7-buffer)/(slide8-slide7-buffer);
+    var check8percentagedelayed=(scroll-slide7-buffer*2.5)/(slide8-slide7-buffer*2.5);
+    if(scroll<slide7){
       $(".slide-title-contact").addClass("invisible");
     }
-    if(scroll >= slide4 && scroll < slide5){
-      $(".slide-logo-contact").removeClass("invisible");
-      $(".slide-title-contact").removeClass("invisible");
+    if(scroll >= slide7 && scroll < slide8){
       $(".slide-logo-contact").removeClass("logo-normal-state");
-      switchElementsSmooth($(".slide-title-tablet"),$(".slide-logo-contact"),check5percentage,0,350,2.5,1.5);
-      changeRotation($(".slide-logo-contact"),90,0,check5percentagedelayed)
-      $(".slide-title-contact").css('opacity',check5percentagedelayed);
+      //ifelse statement necessary because the elements would block the previous slide's icons on hover. 
+      //Normally this would not be a problem since there are no elements to interact with in other slides
+      if(scroll>=slide7+vh*0.6){
+        $(".slide-logo-contact").removeClass("invisible");
+        $(".slide-title-contact").removeClass("invisible");
+      }else{
+        $(".slide-logo-contact").addClass("invisible");
+        $(".slide-title-contact").addClass("invisible");
+
+      }
+      //switchElementsSmooth($(".slide-title-tablet"),$(".slide-logo-contact"),check8percentage,0,350,2.5,6.5);
+      changeRotation($(".slide-logo-contact"),90,0,check8percentagedelayed)
+      $(".slide-title-contact").css('opacity',check8percentagedelayed);
+      $(".slide-logo-contact").css('opacity',check8percentagedelayed);
     }
-    if(scroll>=slide5){
+    if(scroll>=slide8){
       $(".slide-logo-contact").addClass("logo-normal-state");
       $(".slide-title-contact").css('opacity',1);
       $(".slide-title-contact").removeClass("invisible");
@@ -157,12 +239,20 @@ function changeRotation(element,startValue="0",endValue,percentage){
 }
 
 //This function "switches" two elements by changing their opacity
-//It takes two Jquery elements and the scroll percentage
-function switchElements(currentElement,targetElement,percentage){
-  currentElement.css('opacity',1-percentage);
-  targetElement.css('opacity',percentage);
+//It takes two Jquery elements and the scroll percentage as well as an optional delay factor for each element
+function switchElements(currentElement,targetElement,percentage,delayFactorCurrent=3.5,delayFactorTarget=3.5){
+  currentElement.css('opacity',1-percentage*delayFactorCurrent);
+  targetElement.css('opacity',percentage*delayFactorTarget);
 }
 
+
+//A more advanced version of switchElements, it takes a lot more parameters due to being more customizable,
+// and is also able to move them a bit.
+//It takes two Jquery elements and the scroll percentage just as switchElements.
+//offsetCurrent=amount that element 1 will move based on percentage
+//offsetTarget=amount the element 2 will move based on percentage
+//delayFactorCurrent=changes a value on the formula which makes the element 1 appear or dissapear quicker/slower based on percentage.
+//delayFactorTarget=same as previous but for element 2
 function switchElementsSmooth(currentElement,targetElement,percentage,offsetCurrent=50,offsetTarget=50,delayFactorCurrent=3.5,delayFactorTarget=3.5){
   moveCurrent=(percentage-0.2)*offsetCurrent;
   moveTarget=(percentage-0.2)*offsetTarget;
@@ -173,7 +263,6 @@ function switchElementsSmooth(currentElement,targetElement,percentage,offsetCurr
   targetElement.css('opacity',-1+percentage*delayFactorTarget);
   if(offsetTarget!=0){
     targetElement.css('margin-top',-moveTarget);
-    console.log(-moveTarget);
   }
 }
 
