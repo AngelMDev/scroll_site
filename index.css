@@ -455,6 +455,11 @@ body {
 
       /* PERSONAL PAGE SECTION */
 
-      #personal-page {
-        background: cadetblue;
+      #personal-page {}
+      .ps-cont {
+        height: 135vh;
+        background: purple;
+        width: 100%;
+        left: 0;
+        position: absolute;
       }
