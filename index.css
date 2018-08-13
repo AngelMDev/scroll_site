@@ -58,7 +58,7 @@ body {
 .body-basic {}
 
 .body-better {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #better {
@@ -87,6 +87,15 @@ body {
   background-position: center center;
   background-attachment: fixed;
   background-image: url("./ipad-mockup.png");
+}
+
+#alldevices{
+  background-color: #ADA996;  /* fallback for old browsers */
+  background: url('./responsive-mockups.png') center center no-repeat fixed;
+  background: url('./responsive-mockups.png') center center no-repeat fixed, -webkit-linear-gradient(to top, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
+  background: url('./responsive-mockups.png') center center no-repeat fixed, -o-linear-gradient(to top, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+  background: url('./responsive-mockups.png') center center no-repeat fixed, linear-gradient(to top, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
+  background-size: contain;
 }
 
 #contact{
@@ -120,7 +129,7 @@ body {
 }
 
 .main-title-better {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .navbar {
@@ -165,7 +174,7 @@ body {
 }
 
 .main-paragraph-better{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .content-title-basic, .content-title-better, .content-title-best {
@@ -178,7 +187,7 @@ body {
 }
 
 .content-title-better {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .scroll-down-container {
@@ -200,7 +209,7 @@ body {
 
 .scroll-text-better, .scroll-text-best {
   opacity: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .btn-basic {
@@ -306,7 +315,7 @@ body {
 
 .text-sub-title {
   font-size: 40px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: white;
 }
 .text-sub-title2 {
@@ -414,7 +423,7 @@ body {
   margin-top: -35;
   position: fixed;
   color:white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   top: 30%;
   left:5%;
   opacity: 0;
@@ -426,10 +435,25 @@ body {
   position: fixed;
   color: white;
   opacity: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   top: 50%;
   left:5%;
 }
+
+/* ALL DEVICES */
+
+.slide-title-all{
+  width: 600px;
+  margin: 0;
+  margin-top: -35;
+  position: fixed;
+  color:black;
+  font-family: 'Montserrat', sans-serif;
+  top: 5%;
+  left:12%;
+  opacity: 0;
+}
+
 
 /* CONTACT US */
 
@@ -462,7 +486,7 @@ body {
   width: 100%;
   position: fixed;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .slide-content-contact{
@@ -514,7 +538,7 @@ body {
   width: 80%;
   color: white;
   opacity: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   padding-top: 5%;
   left:5%;
 }
@@ -527,7 +551,7 @@ body {
   width: 60%;
   color: white;
   opacity: 1;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   padding-left:30%;
   right: 5px;
   text-align: right;

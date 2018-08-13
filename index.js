@@ -13,8 +13,9 @@ $(document).ready(function(){
   var slide4=$("#personal").offset().top;
   var slide5=$("#mobile").offset().top;
   var slide6=$("#tablet").offset().top;
-  var slide7=$("#skills").offset().top;
-  var slide8=$("#contact").offset().top;
+  var slide7=$("#alldevices").offset().top;
+  var slide8=$("#skills").offset().top;
+  var slide9=$("#contact").offset().top;
   $(window).scroll(function() {
     //scroll stores the current scroll value in pixels.
     var scroll=$(window).scrollTop();
@@ -138,36 +139,60 @@ $(document).ready(function(){
       $(".slide-title-mobile").addClass("invisible");
       $(".slide-title-tablet").removeClass("invisible");
     }
-    //==================TABLET TO SKILLS==================//
+    //==================TABLET TO ALL DEVICES==================//
     var check7percentage=(scroll-slide6-buffer)/(slide7-slide6-buffer);
     var check7percentagehalfway=(check7percentage-0.5)
     check7percentage = Math.min(1, Math.max(0, check7percentage)); //Clamp percentage to [0 , 1]
     check7percentagehalfway=Math.min(1, Math.max(0, check7percentagehalfway));
     var check7percentagedelayed=(scroll-slide6-buffer*2.5)/(slide7-slide6-buffer*2.5);
     if(scroll<slide6){
-
+      //
     }
-    if(scroll >= slide6 && scroll <= slide7){
-      $(".technologies-icon-container").css("filter","grayscale("+(1-check7percentagedelayed)*100+"%)");
-      switchElements($(".slide-title-tablet"),$(".slide-title-skills"),check7percentage,3.5,1);
-      switchElements($(".slide-title-tablet"),$(".slide-content-skills"),check7percentage,3.5,2);
+
+    if(scroll >= slide6 && scroll <= slide7){      
+      switchElementsSmooth($(".slide-title-tablet"),$(".slide-title-all"),check7percentage,0,50);
     }
     if(scroll>slide7){
-      $(".slide-title-tablet").removeClass("invisible");
-      $(".slide-title-skills").css("opacity",1);
-      $(".slide-content-skills").css("opacity",1);
+      
+      $(".slide-title-skills").removeClass("invisible");
     }
-    //========================SKILLS TO CONTACT================//
+    //========================ALL DEVICES TO SKILLS================//
     var check8percentage=(scroll-slide7-buffer)/(slide8-slide7-buffer);
+    var check8percentagehalfway=(check8percentage-0.5)
+    check8percentage = Math.min(1, Math.max(0, check8percentage)); //Clamp percentage to [0 , 1]
+    check8percentagehalfway=Math.min(1, Math.max(0, check8percentagehalfway));
     var check8percentagedelayed=(scroll-slide7-buffer*2.5)/(slide8-slide7-buffer*2.5);
     if(scroll<slide7){
+      
+    }
+
+    if(scroll >= slide7 && scroll <= slide8){      
+      $(".technologies-icon-container").css("filter","grayscale("+(1-check8percentagedelayed)*100+"%)");
+      switchElements($(".slide-title-all"),$(".slide-title-skills"),check8percentage,3.5,1);
+      switchElements($(".slide-title-all"),$(".slide-content-skills"),check8percentage,3.5,2);
+    }
+    if(scroll>slide7){    
+      //$(".slide-title-skills").removeClass("invisible");
+    }
+
+    // if(scroll>slide7){
+      //  $(".slide-title-all").addClass("invisible");
+    //   $(".slide-title-tablet").removeClass("invisible");
+    //   $(".slide-title-skills").css("opacity",1);
+    //   $(".slide-content-skills").css("opacity",1);
+    // }
+      
+    //========================SKILLS TO CONTACT================//
+    var check9percentage=(scroll-slide8-buffer)/(slide9-slide8-buffer);
+    var check9percentagedelayed=(scroll-slide8-buffer*2.5)/(slide9-slide8-buffer*2.5);
+    if(scroll<slide8){
       $(".slide-title-contact").addClass("invisible");
     }
-    if(scroll >= slide7 && scroll < slide8){
+    if(scroll >= slide8 && scroll < slide9){
       $(".slide-logo-contact").removeClass("logo-normal-state");
       //ifelse statement necessary because the elements would block the previous slide's icons on hover. 
       //Normally this would not be a problem since there are no elements to interact with in other slides
-      if(scroll>=slide7+vh*0.6){
+      if(scroll>=slide8+vh*0.6){
         $(".slide-logo-contact").removeClass("invisible");
         $(".slide-title-contact").removeClass("invisible");
       }else{
@@ -176,11 +201,11 @@ $(document).ready(function(){
 
       }
       //switchElementsSmooth($(".slide-title-tablet"),$(".slide-logo-contact"),check8percentage,0,350,2.5,6.5);
-      changeRotation($(".slide-logo-contact"),90,0,check8percentagedelayed)
-      $(".slide-title-contact").css('opacity',check8percentagedelayed);
-      $(".slide-logo-contact").css('opacity',check8percentagedelayed);
+      changeRotation($(".slide-logo-contact"),90,0,check9percentagedelayed)
+      $(".slide-title-contact").css('opacity',check9percentagedelayed);
+      $(".slide-logo-contact").css('opacity',check9percentagedelayed);
     }
-    if(scroll>=slide8){
+    if(scroll>=slide9){
       $(".slide-logo-contact").addClass("logo-normal-state");
       $(".slide-title-contact").css('opacity',1);
       $(".slide-title-contact").removeClass("invisible");
@@ -193,8 +218,6 @@ $(document).ready(function(){
 
 
 //========================HELPER FUNCTIONS====================//
-
-
 //This function gradually changes an elements color in rgba format, depending on the percentage
 //element(Jquery Element) is the element that we want to change the color of
 //targetColor(array) is the color that we want the element to take, format is that of RGB e.g [255,255,255]
