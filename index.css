@@ -47,12 +47,23 @@ body {
   align-items: center;
 }
 
-#basic{
-
+.default-fol-font{
+  font-size: 3rem;
 }
 
 .section-fol {
   height: 135vh;
+}
+
+.scroll-icon{
+  position: fixed;
+  bottom: 5%;
+  left: 48vw;
+  z-index: 20;
+}
+
+.scroll-icon img{
+  width: 64px;
 }
 
 .body-basic {}
@@ -61,16 +72,72 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-#better {
-  background: #efefef;
-  font-family: inherit;
-}
-#best{
-  display: none;
+
+#intro{
+  background: url('./dark-chrome-outline.png') center center no-repeat fixed;
+  background-size: 50%;
 }
 
-.default-fol-font{
-  font-size: 3rem;
+.slide-title-intro{
+  position: fixed;
+  opacity: 1;
+  top: 5vh;
+  left:10%;
+  font-size: 2rem;
+}
+
+#second{
+  background-color: #42275a;  /* fallback for old browsers */
+  background: url('./firefox-outline.png') center center no-repeat fixed;
+  background: url('./firefox-outline.png') center center no-repeat fixed, -webkit-linear-gradient(to bottom, #734b6d, #42275a); 
+  background: url('./firefox-outline.png') center center no-repeat fixed, -o-linear-gradient(to bottom, #734b6d, #42275a);
+  background: url('./firefox-outline.png') center center no-repeat fixed, linear-gradient(to bottom, #734b6d, #42275a);
+  background-size: 50%;
+}
+
+.slide-title-second{
+  position: fixed;
+  opacity: 0;
+  bottom: 5%;
+  right: 10%;
+  font-size: 2rem;
+  color: white;
+}
+
+#business{
+  background-color: #FDC830;  /* fallback for old browsers */
+  background: url('./safari-outline.png') center center no-repeat fixed;
+  background: url('./safari-outline.png') center center no-repeat fixed, -webkit-linear-gradient(to bottom, #F37335, #FDC830); 
+  background: url('./safari-outline.png') center center no-repeat fixed, -o-linear-gradient(to bottom, #F37335, #FDC830);
+  background: url('./safari-outline.png') center center no-repeat fixed, linear-gradient(to bottom, #F37335, #FDC830);
+  background-size: 50%;
+}
+
+.slide-title-business{
+  position: fixed;
+  opacity: 0;
+  top: 5%;
+  left: 10%;
+  font-size: 2rem;
+  color: white;
+}
+
+.slide-title-webapp{
+  position: fixed;
+  opacity: 0;
+  bottom: 5%;
+  right: 10%;
+  font-size: 2rem;
+  color: white;
+}
+
+#web-app{
+  background-color: #FDC830;  /* fallback for old browsers */
+  background: url('./chrome-outline.png') center center no-repeat fixed;
+  background: url('./chrome-outline.png') center center no-repeat fixed, -webkit-linear-gradient(to bottom, #93291E, #ED213A);
+  background: url('./chrome-outline.png') center center no-repeat fixed, -o-linear-gradient(to bottom, #93291E, #ED213A);
+  background: url('./chrome-outline.png') center center no-repeat fixed, linear-gradient(to bottom, #93291E, #ED213A);
+  background-size: 50%;
 }
 
 #mobile{
@@ -99,9 +166,9 @@ body {
 }
 
 #contact{
-  background: #009FFF;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #ec2F4B, #009FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */   
+  background: #2e3031;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #2e3031, #444444);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #2e3031, #444444); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
   background-size: cover;
   /* background-image: url("./Contact_bg.png"); */
   background-repeat: no-repeat;
